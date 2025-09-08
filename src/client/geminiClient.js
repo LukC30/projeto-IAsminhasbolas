@@ -18,9 +18,9 @@ const askGemini = async (prompt) =>{
         } 
         throw new Error('Formato de resposta invalido.')
     } catch (e) {
-        console.error("Erro detalhado do Axios:", error.response?.data || error.message);
+        console.error("Erro detalhado do Axios: ", error.response?.data || error.message);
         throw new Error('Falha na comunicação com a API do Gemini.');
     }
 };
 
-module.exports = {askGemini};
+module.exports = { askGemini };
