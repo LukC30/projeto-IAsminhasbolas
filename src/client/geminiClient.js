@@ -17,7 +17,7 @@ const askGemini = async (prompt) =>{
             return data.candidates[0].content.parts[0].text;
         } 
         throw new Error('Formato de resposta invalido.')
-    } catch (e) {
+    } catch (error) {
         console.error("Erro detalhado do Axios: ", error.response?.data || error.message);
         throw new Error('Falha na comunicação com a API do Gemini.');
     }

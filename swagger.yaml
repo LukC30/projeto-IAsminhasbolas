@@ -4,8 +4,8 @@ info:
   version: "1.0.0"
   description: Uma API que atua como um proxy inteligente para a API do Gemini, com cache e segurança.
 servers:
-  - url: http://localhost:3000
-    description: Servidor de Desenvolvimento
+  - url: /api/v1
+    description: Servidor Principal
 
 components:
   securitySchemes:
@@ -33,29 +33,3 @@ components:
 tags:
   - name: Gemini
     description: Endpoints para interação com a API do Gemini
-
-security:
-  - apiKeyAuth: []
-
-paths:
-  /api/v1/ask:
-    post:
-      tags:
-        - Gemini
-      summary: Envia um prompt para a API do Gemini
-      description: Recebe um prompt, o envia para a API do Gemini (utilizando cache) e retorna a resposta.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - prompt
-              properties:
-                prompt:
-                  type: string
-                  description: O texto da pergunta a ser enviada para o Gemini.
-                  example: "Qual a distância da Terra até a Lua?"
-      responses:
-        

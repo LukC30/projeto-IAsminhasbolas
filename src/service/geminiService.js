@@ -32,4 +32,4 @@ const makeGeminiService = () => {
     };
 }
 
-module.exports = makeGeminiService
+module.exports = makeGeminiService;
